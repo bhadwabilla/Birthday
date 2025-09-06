@@ -3,7 +3,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>FOR YOU</title>
+    <title>Romantic Birthday Animation Slideshow</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <style>
       :root {
@@ -78,17 +78,25 @@
         height: 100vh;
         width: 100%;
         text-align: center;
-        justify-content: center;
+        justify-content: flex-start;   /* content starts at top */
         align-items: center;
         flex-direction: column;
         padding: 20px;
         box-sizing: border-box;
-        overflow-y: auto; /* ✅ fix: allows scrolling if content overflows */
-        -webkit-overflow-scrolling: touch; /* ✅ smooth scroll on mobile */
+        overflow: hidden;              /* default: no scroll */
       }
+
       .slide.active {
         display: flex;
+        overflow-y: auto;              /* scroll only if needed */
+        -webkit-overflow-scrolling: touch;
       }
+
+      .slide button {
+        margin-top: auto;   /* push button to bottom */
+        margin-bottom: 20px;
+      }
+
       .btn {
         background: var(--accent);
         color: white;
@@ -1090,4 +1098,5 @@
     </script>
   </body>
 </html>
+
 
