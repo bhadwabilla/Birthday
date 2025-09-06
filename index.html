@@ -17,9 +17,9 @@
       }
       body {
         margin: 0;
-        font-family: "Arial", sans-serif;
+        font-family: 'Arial', sans-serif;
         background: #ffe6f0;
-        overflow-x: hidden;
+        overflow: hidden;  /* ✅ stop page-level scrolling */
       }
       /* Dimmed mode */
       body.dimmed,
@@ -78,22 +78,23 @@
         height: 100vh;
         width: 100%;
         text-align: center;
-        justify-content: flex-start;   /* content starts at top */
-        align-items: center;
         flex-direction: column;
         padding: 20px;
         box-sizing: border-box;
-        overflow: hidden;              /* default: no scroll */
+        overflow: hidden;  /* default: no scroll */
       }
-
+      
       .slide.active {
         display: flex;
-        overflow-y: auto;              /* scroll only if needed */
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        overflow-y: auto;              /* ✅ scroll only inside active slide */
         -webkit-overflow-scrolling: touch;
       }
-
+      
       .slide button {
-        margin-top: auto;   /* push button to bottom */
+        margin-top: auto;   /* ✅ keeps button at bottom */
         margin-bottom: 20px;
       }
 
@@ -1098,5 +1099,6 @@
     </script>
   </body>
 </html>
+
 
 
