@@ -481,12 +481,11 @@
       }
 
       /* Enable scrolling only on the finale slide */
-      #slide-7 {
-        display: block; /* Instead of flex centering */
-        padding-top: 40px; /* Push content down so it never cuts off */
-        overflow-y: auto; /* Allow scrolling */
-        -webkit-overflow-scrolling: touch;
-      }
+      #slide-7.active {
+  padding-top: 40px;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
     </style>
     <link
       href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap"
